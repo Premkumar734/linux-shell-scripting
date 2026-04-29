@@ -1,6 +1,0 @@
-user-management/
-├── create_user.sh
-├── delete_user.sh
-├── check_user.sh
-├── bulk_user_creation.sh
-└── README.md

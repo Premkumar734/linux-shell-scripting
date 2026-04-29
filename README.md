@@ -21,7 +21,7 @@ These scripts form the foundation for advanced automation tasks.
 
 This folder contains shell scripts used for managing users in a Linux system.
 
-## Topics Covered
+## Scripts Included
 - create_user.sh
 - delete_user.sh
 - check_user.sh
@@ -34,7 +34,7 @@ To automate user management tasks in Linux environments, which is a common respo
 
 This folder contains shell scripts used to monitor system performance and health in a Linux environment.
 
-## Topics Covered
+## Scripts Included
 - disk_usage.sh
 - cpu_usage.sh
 - memory_usage.sh
@@ -46,7 +46,7 @@ To automate system monitoring tasks, which are critical in production Linux serv
 
 This folder contains shell scripts used for managing and analyzing system log files in Linux.
 
-## Topics Covered
+## Scripts Included
 
 - cleanup_logs.sh
 - archive_logs.sh
@@ -60,7 +60,7 @@ To automate log maintenance tasks such as cleanup, monitoring, and backup, which
 
 This folder contains shell scripts used to automate repetitive system administration tasks in Linux environments.
 
-## Topics Covered
+## Scripts Included
 
 - backup_automation.sh
 - cron_setup.sh

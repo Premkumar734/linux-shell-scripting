@@ -56,5 +56,18 @@ This folder contains shell scripts used for managing and analyzing system log fi
 To automate log maintenance tasks such as cleanup, monitoring, and backup, which are essential in production environments.
 
 
+#  Automation Scripts
+
+This folder contains shell scripts used to automate repetitive system administration tasks in Linux environments.
+
+## Topics Covered
+
+- backup_automation.sh
+- cron_setup.sh
+- service_restart.sh
+- system_update.sh
+
+To reduce manual effort by automating routine tasks, which is a key responsibility in DevOps and system administration roles.
+
 
 

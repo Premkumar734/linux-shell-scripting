@@ -1,1 +1,51 @@
+#!/bin/bash
 
+# ===== CONFIGURATION =====
+THRESHOLD=80
+LOG_FILE="/var/log/system_health.log"
+SERVICES=("sshd" "nginx")   # You can modify services
+
+DATE=$(date "+%Y-%m-%d %H:%M:%S")
+
+echo "========== $DATE ==========" >> $LOG_FILE
+
+# ===== DISK USAGE CHECK =====
+DISK_USAGE=$(df -h / | awk 'NR==2 {print $5}' | sed 's/%//')
+
+if [ "$DISK_USAGE" -gt "$THRESHOLD" ]; then
+    echo "$DATE [ALERT] Disk usage is high: $DISK_USAGE%" | tee -a $LOG_FILE
+else
+    echo "$DATE [INFO] Disk usage normal: $DISK_USAGE%" >> $LOG_FILE
+fi
+
+# ===== CPU USAGE CHECK =====
+CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
+
+echo "$DATE [INFO] CPU Usage: $CPU_USAGE%" >> $LOG_FILE
+
+# ===== MEMORY USAGE CHECK =====
+MEMORY_USAGE=$(free | awk '/Mem/ {printf("%.2f"), $3/$2 * 100.0}')
+
+echo "$DATE [INFO] Memory Usage: $MEMORY_USAGE%" >> $LOG_FILE
+
+# ===== SERVICE CHECK & AUTO-RESTART =====
+for service in "${SERVICES[@]}"
+do
+    if systemctl is-active --quiet $service
+    then
+        echo "$DATE [INFO] $service is running" >> $LOG_FILE
+    else
+        echo "$DATE [WARNING] $service is down. Attempting restart..." | tee -a $LOG_FILE
+        
+        systemctl restart $service
+        
+        if systemctl is-active --quiet $service
+        then
+            echo "$DATE [SUCCESS] $service restarted successfully" | tee -a $LOG_FILE
+        else
+            echo "$DATE [ERROR] Failed to restart $service" | tee -a $LOG_FILE
+        fi
+    fi
+done
+
+echo "" >> $LOG_FILE

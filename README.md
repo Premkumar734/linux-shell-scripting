@@ -70,4 +70,23 @@ This folder contains shell scripts used to automate repetitive system administra
 To reduce manual effort by automating routine tasks, which is a key responsibility in DevOps and system administration roles.
 
 
+##  Project
+
+### 🔹 Automated System Monitoring & Self-Healing Script
+
+Designed and developed a shell-based automation system to monitor server health and automatically resolve common issues.
+
+**Key Features:**
+- Monitors disk usage, CPU, and memory  
+- Detects high disk usage and generates alerts  
+- Checks critical service status (e.g., SSH, Nginx)  
+- Automatically restarts services if they are down  
+- Logs all activities for auditing and troubleshooting  
+
+**Tools Used:**
+Bash, Linux commands (df, top, free, systemctl), cron
+
+**Impact:**
+Reduced manual monitoring effort and improved system uptime by automating issue detection and resolution.
+
 

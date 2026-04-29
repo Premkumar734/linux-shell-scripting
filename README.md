@@ -1,5 +1,7 @@
 # linux-shell-scripting
 Real-world shell scripting projects for Linux &amp; DevOps
+
+
 # Basics of Shell Scripting
 
 This folder contains fundamental shell scripting concepts.
@@ -39,6 +41,20 @@ This folder contains shell scripts used to monitor system performance and health
 - service_status.sh
 
 To automate system monitoring tasks, which are critical in production Linux servers and DevOps environments.
+
+#  Log Management Scripts
+
+This folder contains shell scripts used for managing and analyzing system log files in Linux.
+
+## Topics Covered
+
+- cleanup_logs.sh
+- archive_logs.sh
+- error_log_check.sh
+- log_size_check.sh
+
+To automate log maintenance tasks such as cleanup, monitoring, and backup, which are essential in production environments.
+
 
 
 

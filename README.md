@@ -28,4 +28,17 @@ This folder contains shell scripts used for managing users in a Linux system.
 To automate user management tasks in Linux environments, which is a common responsibility for system administrators and DevOps engineers.
 
 
+#  System Monitoring Scripts
+
+This folder contains shell scripts used to monitor system performance and health in a Linux environment.
+
+## Topics Covered
+- disk_usage.sh
+- cpu_usage.sh
+- memory_usage.sh
+- service_status.sh
+
+To automate system monitoring tasks, which are critical in production Linux servers and DevOps environments.
+
+
 
